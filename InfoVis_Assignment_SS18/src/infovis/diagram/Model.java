@@ -77,12 +77,12 @@ public class Model {
 		return idCounter;
 	}
 	public void generateTestValues(){
-		addVertex(new Vertex(70,90));
+		addVertex(new Vertex(180,90));
     	addVertex(new Vertex(270,290));
     	addVertex(new Vertex(270,230));
     	addVertex(new Vertex(210,290));
     	addVertex(new Vertex(400,90));
-    	addVertex(new Vertex(400,690));
+    	addVertex(new Vertex(400,400));
     	addVertex(new Vertex(700,90));
     	addVertex(new Vertex(700,490));
 	}

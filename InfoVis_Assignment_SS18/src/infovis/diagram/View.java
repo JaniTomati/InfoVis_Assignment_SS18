@@ -20,8 +20,8 @@ public class View extends JPanel{
 	private Model model = null;
 	private Color color = Color.BLUE;
 	private double scale = 1;
-	private double translateX= 0;
-	private double translateY=0;
+	private double translateX = 0;
+	private double translateY = 0;
 	private Rectangle2D marker = new Rectangle2D.Double();      // to highlight currently viewed area in overview
 	private Rectangle2D overviewRect = new Rectangle2D.Double();   
 
@@ -46,35 +46,39 @@ public class View extends JPanel{
 		g2D.clearRect(0, 0, getWidth(), getHeight());
 		
 		g2D.scale(getScale(), getScale());
-				
-		paintDiagram(g2D);
+		paintDiagram(g2D);	// paint actual diagram 
 	
 		// set position of overview rect 
 		g2D.scale(1 / getScale(), 1 / getScale());
 		overviewRect.setRect(0, 0, 200, 180);
 		g2D.clearRect(0, 0, 200, 180); // do not show vertices under overview
 
-		
 		// set color and show overview rect
 		g2D.setColor(Color.BLACK); // rectangle "stroke"
         g2D.draw(overviewRect);
         
         // paint smaller scaled version
         g2D.scale(0.25, 0.25);
-		paintDiagram(g2D);
-		
+		paintDiagram(g2D);	// paint overview diagram
         
 		// set marker rectangle (current viewed part of diagram)
 		Color red_opaque = new Color(255, 0, 0, 125);
 	    g2D.setColor(red_opaque);
+	    updateMarker(0, 0, scale);
 	    g2D.fill(marker);
-		updateMarker(0, 0, getScale());	
-		
+
 	}
 	
-	private void paintDiagram(Graphics2D g2D){
-		for (Element element: model.getElements()){
+	private void paintDiagram(Graphics2D g2D) {
+		for (Element element: model.getElements()) {
 			element.paint(g2D);
+		}
+	}
+	
+	private void getCanvasSize() {
+		for (Element element : model.getElements()) {
+			element.getX();
+			element.getY();
 		}
 	}
 	
@@ -96,18 +100,18 @@ public class View extends JPanel{
 	public void setTranslateY(double tansslateY) {
 		this.translateY = tansslateY;
 	}
-	public void updateTranslation(double x, double y){
+	public void updateTranslation(double x, double y) {
 		setTranslateX(x);
 		setTranslateY(y);
 	}	
-	public void updateMarker(int x, int y, double scale){
+	public void updateMarker(int x, int y, double scale) {
 		double width  = getWidth() / scale;
 		double height = getHeight() / scale;
 		if (width > MAX_WIDTH)
 			width = (MAX_WIDTH) / scale; 
 		if (height > MAX_HEIGHT)
 			height = (MAX_HEIGHT) / scale;
-		
+				
 		marker.setRect(x, y, width, height); // 16, 10 
 	}
 	public Rectangle2D getMarker(){

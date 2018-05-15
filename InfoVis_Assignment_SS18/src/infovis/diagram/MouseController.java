@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -27,12 +28,14 @@ public class MouseController implements MouseListener,MouseMotionListener {
 	 private DrawingEdge drawingEdge = null;
 	 private boolean fisheyeMode;
 	 private GroupingRectangle groupRectangle;
+	 private boolean inMarker = false; 
+	 private boolean moveMarker = false;
 	/*
 	 * Getter And Setter
 	 */
-	 public Element getSelectedElement(){
+	public Element getSelectedElement(){
 		 return selectedElement;
-	 }
+	}
     public Model getModel() {
 		return model;
 	}
@@ -52,9 +55,7 @@ public class MouseController implements MouseListener,MouseMotionListener {
 		int x = e.getX();
 		int y = e.getY();
 		double scale = view.getScale();
-		
-		
-		
+				
 		if (e.getButton() == MouseEvent.BUTTON3){
 			/*
 			 * add grouped elements to the model
@@ -92,8 +93,17 @@ public class MouseController implements MouseListener,MouseMotionListener {
 		int y = e.getY();
 		double scale = view.getScale();
 		
+		// marker scaled position 
+		int x_scale = (int) (x / 0.25); 
+		int y_scale = (int) (y / 0.25); 
+		
+		if (view.markerContains(x_scale, y_scale)) {
+			moveMarker = true;
+		} else {
+			moveMarker = false;
+		}
 	   
-	   if (edgeDrawMode){
+	    if (edgeDrawMode){
 			drawingEdge = new DrawingEdge((Vertex)getElementContainingPosition(x/scale,y/scale));
 			model.addElement(drawingEdge);
 		} else if (fisheyeMode){
@@ -171,6 +181,7 @@ public class MouseController implements MouseListener,MouseMotionListener {
 		/*
 		 * Aufgabe 1.2
 		 */
+		
 		if (fisheyeMode){
 			/*
 			 * handle fisheye mode interactions
@@ -179,8 +190,15 @@ public class MouseController implements MouseListener,MouseMotionListener {
 		} else if (edgeDrawMode){
 			drawingEdge.setX(e.getX());
 			drawingEdge.setY(e.getY());
-		}else if(selectedElement != null){
-			selectedElement.updatePosition((e.getX()-mouseOffsetX)/scale, (e.getY()-mouseOffsetY) /scale);
+		} else if(selectedElement != null){
+			selectedElement.updatePosition((e.getX()-mouseOffsetX)/scale, (e.getY()-mouseOffsetY)/scale);
+			//if (moveMarker) { 
+				System.out.println("MOVE MARKER TRUE");
+				int x_offset = (int) ((e.getX()-mouseOffsetX) / 0.25); 
+				int y_offset = (int) ((e.getY()-mouseOffsetY) / 0.25);
+				view.updateTranslation(x_offset, y_offset);
+				view.updateMarker(x_offset, y_offset, 0.25);
+			//}
 		}
 		view.repaint();
 	}
@@ -220,6 +238,5 @@ public class MouseController implements MouseListener,MouseMotionListener {
 		}
 		return currentElement;
 	}
-	
     
 }
