@@ -1,15 +1,21 @@
 package infovis.scatterplot;
 
+import infovis.diagram.elements.Edge;
+import infovis.diagram.elements.Vertex;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class MouseController implements MouseListener, MouseMotionListener {
 
 	private Model model = null;
 	private View view = null;
 
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent e) {
 	}
 
 	public void mouseEntered(MouseEvent arg0) {
