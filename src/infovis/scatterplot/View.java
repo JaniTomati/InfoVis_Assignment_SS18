@@ -20,7 +20,7 @@ public class View extends JPanel {
 	private Model model = null;
 	private Rectangle2D markerRectangle = new Rectangle2D.Double(0,0,0,0);
 
-	public Rectangle2D getMarkerRectangle() {
+	Rectangle2D getMarkerRectangle() {
 		return markerRectangle;
 	}
 
@@ -67,33 +67,41 @@ public class View extends JPanel {
 
 				int offset = model.getList().size();
 				int count = 0;
-				double LOWERBORDER = 10000.0;
-				double HIGHERBORDER = 0.0;
-				double LOWERBORDERJ = 10000.0;
-				double HIGHERBORDERJ = 0.0;
+				double min_width = 10000.0;
+				double max_width = 0.0;
+				double min_height = 10000.0;
+				double max_height = 0.0;
 				for(Data d: data) {
+					// calculate borders of current cell
 					if(count < offset) {
-						if(d.getValue(i) < LOWERBORDER) {
-							LOWERBORDER = d.getValue(i);
-						} if(d.getValue(i) > HIGHERBORDER) {
-							HIGHERBORDER = d.getValue(i);
-						} if(d.getValue(j) < LOWERBORDERJ) {
-							LOWERBORDERJ = d.getValue(j);
-						} if(d.getValue(j) > HIGHERBORDERJ) {
-							HIGHERBORDERJ = d.getValue(j);
+						if(d.getValue(i) < min_width) {
+							min_width = d.getValue(i);
+						} if(d.getValue(i) > max_width) {
+							max_width = d.getValue(i);
+						} if(d.getValue(j) < min_height) {
+							min_height = d.getValue(j);
+						} if(d.getValue(j) > max_height) {
+							max_height = d.getValue(j);
 						}
-						LOWERBORDER = LOWERBORDER - LOWERBORDER*0.1;
-						LOWERBORDERJ = LOWERBORDERJ - LOWERBORDERJ*0.1;
-						HIGHERBORDER = HIGHERBORDER + HIGHERBORDER*0.1;
-						HIGHERBORDERJ = HIGHERBORDERJ + HIGHERBORDERJ*0.1;
+						min_width  -= min_width  * 0.1;
+						min_height -= min_height * 0.1;
+						max_width  += max_width  * 0.1;
+						max_height += max_height * 0.1;
 					}
 					count++;
 
+					Point data_point = new Point((int) (((d.getValue(i) - min_width) * HEIGHT) / (max_width - min_width) + i * HEIGHT + 50),
+							(int) (((d.getValue(j) - min_height) * WIDTH) / (max_height - min_height) + j * WIDTH + 50));
+
+					if(markerRectangle.contains(data_point)) {
+						d.setColor(Color.RED);
+					}
+					// draw data
 					g2D.setColor(d.getColor());
-					g2D.drawOval( (int) (((d.getValue(i) - LOWERBORDER) * HEIGHT) / (HIGHERBORDER - LOWERBORDER) + i * HEIGHT + 50),
-							(int) (((d.getValue(j) - LOWERBORDERJ) * WIDTH) / (HIGHERBORDERJ - LOWERBORDERJ) + j * WIDTH + 50), 7, 7);
-					g2D.setColor(Color.BLACK);
+					//g2D.fillOval(data_point.x, data_point.y, 7, 7);
+					g2D.drawOval(data_point.x, data_point.y, 7, 7);
 				}
+				g2D.setColor(Color.BLACK);
 				g2D.draw(new Rectangle2D.Double(i * WIDTH + 50, j * HEIGHT + 50, WIDTH, HEIGHT));
 			}
 		}
