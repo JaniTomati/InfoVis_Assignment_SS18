@@ -28,7 +28,7 @@ public class MouseController implements MouseListener,MouseMotionListener {
 	 private DrawingEdge drawingEdge = null;
 	 private boolean fisheyeMode;
 	 private GroupingRectangle groupRectangle;
-	 private boolean inMarker = false; 
+	 private boolean overviewMarker = false;
 	 private boolean moveMarker = false;
 	/*
 	 * Getter And Setter
@@ -96,13 +96,18 @@ public class MouseController implements MouseListener,MouseMotionListener {
 		// marker scaled position 
 		int x_scale = (int) (x / 0.25); 
 		int y_scale = (int) (y / 0.25); 
-		
+
+		if (view.overviewContains(x_scale, y_scale)) {
+			overviewMarker = true;
+		} else {
+			overviewMarker = false;
+		}
 		if (view.markerContains(x_scale, y_scale)) {
 			moveMarker = true;
 		} else {
 			moveMarker = false;
 		}
-	   
+
 	    if (edgeDrawMode){
 			drawingEdge = new DrawingEdge((Vertex)getElementContainingPosition(x/scale,y/scale));
 			model.addElement(drawingEdge);
@@ -192,13 +197,11 @@ public class MouseController implements MouseListener,MouseMotionListener {
 			drawingEdge.setY(e.getY());
 		} else if(selectedElement != null){
 			selectedElement.updatePosition((e.getX()-mouseOffsetX)/scale, (e.getY()-mouseOffsetY)/scale);
-			//if (moveMarker) { 
-				System.out.println("MOVE MARKER TRUE");
-				int x_offset = (int) ((e.getX()-mouseOffsetX) / 0.25); 
+			if (moveMarker || overviewMarker) {
+				int x_offset = (int) ((e.getX()-mouseOffsetX) / 0.25);
 				int y_offset = (int) ((e.getY()-mouseOffsetY) / 0.25);
 				view.updateTranslation(x_offset, y_offset);
-				view.updateMarker(x_offset, y_offset, 0.25);
-			//}
+			}
 		}
 		view.repaint();
 	}
