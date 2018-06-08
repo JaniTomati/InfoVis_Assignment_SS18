@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af8df829-b4bc-43d9-bde0-95fd2ee53255" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infovis/diagram/MouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infovis/diagram/MouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infovis/diagram/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infovis/diagram/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infovis/scatterplot/MouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infovis/scatterplot/MouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infovis/scatterplot/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/infovis/scatterplot/View.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,45 +22,22 @@
         </entry>
       </file>
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/infovis/diagram/View.java">
+        <entry file="file://$PROJECT_DIR$/src/infovis/scatterplot/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+            <state relative-caret-position="323">
+              <caret line="88" column="58" lean-forward="true" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
               <folding>
-                <element signature="e#2412#2413#0" expanded="true" />
-                <element signature="e#2437#2438#0" expanded="true" />
-                <element signature="e#2464#2465#0" expanded="true" />
-                <element signature="e#2483#2484#0" expanded="true" />
-                <element signature="e#2516#2517#0" expanded="true" />
-                <element signature="e#2540#2541#0" expanded="true" />
-                <element signature="e#2588#2589#0" expanded="true" />
-                <element signature="e#2623#2624#0" expanded="true" />
-                <element signature="e#2656#2657#0" expanded="true" />
-                <element signature="e#2680#2681#0" expanded="true" />
-                <element signature="e#2728#2729#0" expanded="true" />
-                <element signature="e#2763#2764#0" expanded="true" />
-                <element signature="e#3567#3568#0" expanded="true" />
-                <element signature="e#3587#3588#0" expanded="true" />
-                <element signature="e#3633#3634#0" expanded="true" />
-                <element signature="e#3668#3669#0" expanded="true" />
-                <element signature="e#3717#3718#0" expanded="true" />
-                <element signature="e#3758#3759#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MouseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/infovis/diagram/MouseController.java">
+        <entry file="file://$PROJECT_DIR$/src/infovis/paracoords/MouseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="204" column="9" lean-forward="true" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
-              <folding>
-                <element signature="e#6208#6209#0" expanded="true" />
-                <element signature="e#6234#6235#0" expanded="true" />
-                <element signature="e#6287#6288#0" expanded="true" />
-                <element signature="e#6326#6327#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -97,12 +74,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/infovis/scatterplot/MouseController.java" />
         <option value="$PROJECT_DIR$/src/infovis/paracoords/MouseController.java" />
-        <option value="$PROJECT_DIR$/src/infovis/scatterplot/View.java" />
         <option value="$PROJECT_DIR$/src/infovis/paracoords/View.java" />
         <option value="$PROJECT_DIR$/src/infovis/diagram/MouseController.java" />
         <option value="$PROJECT_DIR$/src/infovis/diagram/View.java" />
+        <option value="$PROJECT_DIR$/src/infovis/scatterplot/MouseController.java" />
+        <option value="$PROJECT_DIR$/src/infovis/scatterplot/View.java" />
       </list>
     </option>
   </component>
@@ -155,13 +132,6 @@
               <item name="InfoVis_Assignment_SS18" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="infovis" type="462c0819:PsiDirectoryNode" />
-              <item name="diagram" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfoVis_Assignment_SS18" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InfoVis_Assignment_SS18" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="infovis" type="462c0819:PsiDirectoryNode" />
               <item name="paracoords" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -180,6 +150,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/jonny/Documents/Studium/6.Semester/Visualisierung/infovis/InfoVis_Assignment_SS18/src/infovis/scatterplot/MouseController.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -195,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Diagram">
+  <component name="RunManager" selected="Application.Scatterplot">
     <configuration name="Diagram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="infovis.diagram.Diagram" />
       <module name="InfoVis_Assignment_SS18" />
@@ -277,9 +248,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Scatterplot" />
         <item itemvalue="Application.Diagram" />
         <item itemvalue="Application.ParaCoords" />
-        <item itemvalue="Application.Scatterplot" />
       </list>
     </recent_temporary>
   </component>
@@ -303,7 +274,7 @@
       <workItem from="1527427202066" duration="4728000" />
       <workItem from="1527585199115" duration="3392000" />
       <workItem from="1528192248306" duration="89000" />
-      <workItem from="1528454938902" duration="14092000" />
+      <workItem from="1528454938902" duration="15564000" />
     </task>
     <task id="LOCAL-00001" summary="assignment2 started">
       <created>1526379487864</created>
@@ -333,15 +304,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527588582200</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="assignment 1 reworked">
+      <created>1528472874110</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1528472874110</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44863000" />
+    <option name="totallyTimeSpent" value="46335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -353,7 +330,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2074074" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49973017" visible="true" weight="0.2857143" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973017" weight="0.2857143" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -385,7 +362,8 @@
     <MESSAGE value="assignment 2 ex. 1 finished" />
     <MESSAGE value="assignment 2 finished" />
     <MESSAGE value="assignment 3 finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="assignment 3 finished" />
+    <MESSAGE value="assignment 1 reworked" />
+    <option name="LAST_COMMIT_MESSAGE" value="assignment 1 reworked" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -661,30 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/infovis/scatterplot/MouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="38" selection-start-line="38" selection-end-line="46" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/infovis/paracoords/MouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/infovis/scatterplot/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/javax/swing/JComponent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6825">
@@ -713,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/infovis/paracoords/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="59" column="24" lean-forward="true" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cars.ssv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -745,7 +692,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/infovis/diagram/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="1875">
           <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
           <folding>
             <element signature="e#2412#2413#0" expanded="true" />
@@ -766,6 +713,41 @@
             <element signature="e#3668#3669#0" expanded="true" />
             <element signature="e#3717#3718#0" expanded="true" />
             <element signature="e#3758#3759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infovis/scatterplot/MouseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="method#mouseDragged#0;class#MouseController#0" />
+            <element signature="method#mouseMoved#0;class#MouseController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infovis/paracoords/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="78" column="46" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infovis/paracoords/MouseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/infovis/scatterplot/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="88" column="58" lean-forward="true" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

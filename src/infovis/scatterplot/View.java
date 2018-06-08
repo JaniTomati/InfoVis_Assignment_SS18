@@ -6,6 +6,7 @@ import sun.security.util.Length;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
@@ -28,6 +29,7 @@ public class View extends JPanel {
 	public void paint(Graphics g) {
 
 		Graphics2D g2D = (Graphics2D) g;
+		g2D.clearRect(0, 0, getWidth(), getHeight());
 
 		/*for (String l : model.getLabels()) {
 			Debug.print(l);
@@ -45,11 +47,15 @@ public class View extends JPanel {
 			Debug.println("");
 		}*/
 
+		g2D.setColor(Color.RED);
+		g2D.draw(markerRectangle);
+		g2D.setColor(Color.BLACK);
+
 		int amount_labels = model.getLabels().size();
 		ArrayList<String> labels = model.getLabels();
 
 		ArrayList<Data> data = model.getList();
-
+		ArrayList<Point2D> data_point_array = new ArrayList<Point2D>();
 
 		for(int i = 0; i < amount_labels; ++i) {
 			for(int j = 0; j < amount_labels; ++j) {
@@ -90,23 +96,23 @@ public class View extends JPanel {
 					}
 					count++;
 
-					Point data_point = new Point((int) (((d.getValue(i) - min_width) * HEIGHT) / (max_width - min_width) + i * HEIGHT + 50),
+					Point2D data_point = new Point2D.Double((int) (((d.getValue(i) - min_width) * HEIGHT) / (max_width - min_width) + i * HEIGHT + 50),
 							(int) (((d.getValue(j) - min_height) * WIDTH) / (max_height - min_height) + j * WIDTH + 50));
+
+					data_point_array.add(data_point);
 
 					if(markerRectangle.contains(data_point)) {
 						d.setColor(Color.RED);
 					}
-					// draw data
-					g2D.setColor(d.getColor());
-					//g2D.fillOval(data_point.x, data_point.y, 7, 7);
-					g2D.drawOval(data_point.x, data_point.y, 7, 7);
 				}
 				g2D.setColor(Color.BLACK);
 				g2D.draw(new Rectangle2D.Double(i * WIDTH + 50, j * HEIGHT + 50, WIDTH, HEIGHT));
 			}
 		}
-
-
+		for(int i = 0; i < data_point_array.size(); ++i) {
+			g2D.setColor(data.get(i % data.size()).getColor());
+			g2D.drawOval( (int) data_point_array.get(i).getX() - 3, (int) data_point_array.get(i).getY() - 3, 6, 6);
+		}
 	}
 	public void setModel(Model model) {
 		this.model = model;

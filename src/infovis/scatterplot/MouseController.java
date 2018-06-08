@@ -48,11 +48,9 @@ public class MouseController implements MouseListener, MouseMotionListener {
 	}
 
 	public void mouseDragged(MouseEvent arg0) {
-		//view.repaint();
 	}
 
 	public void mouseMoved(MouseEvent arg0) {
-		view.repaint();
 	}
 
 	public void setModel(Model model) {
